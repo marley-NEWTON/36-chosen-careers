@@ -1,0 +1,133 @@
+.orders-page h1 {
+  color: var(--color-navy);
+  margin-bottom: 0.25rem;
+}
+
+[data-theme="dark"] .orders-page h1 {
+  color: var(--color-text);
+}
+
+.orders-subtitle {
+  color: var(--color-text-muted);
+  margin-bottom: 1.75rem;
+}
+
+.orders-table-wrapper {
+  overflow-x: auto;
+  padding: 0;
+}
+
+.orders-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.orders-table th,
+.orders-table td {
+  text-align: left;
+  padding: 1rem 1.25rem;
+  white-space: nowrap;
+}
+
+.orders-table th {
+  color: var(--color-text-muted);
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.orders-table td {
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-text);
+}
+
+.orders-table tr:last-child td {
+  border-bottom: none;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.status-completed {
+  background-color: rgba(16, 185, 129, 0.12);
+  color: var(--color-accent-dark);
+}
+
+.status-progress {
+  background-color: rgba(37, 99, 235, 0.12);
+  color: var(--color-primary);
+}
+
+.status-pending {
+  background-color: rgba(245, 158, 11, 0.12);
+  color: #b45309;
+}
+
+.orders-download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background-color: var(--color-primary);
+  color: #ffffff;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 0.5rem 0.85rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color var(--transition);
+}
+
+.orders-download-btn:hover {
+  background-color: var(--color-primary-dark);
+}
+
+.orders-waiting {
+  color: var(--color-text-muted);
+}
+
+.orders-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 0;
+}
+
+.order-form-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.order-form-actions-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-left: auto;
+}
+
+.draft-save-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: none;
+  border: none;
+  color: var(--color-text-muted);
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: color var(--transition);
+}
+
+.draft-save-btn:hover {
+  color: var(--color-primary);
+}

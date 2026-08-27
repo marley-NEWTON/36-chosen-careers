@@ -1,0 +1,126 @@
+.cv-template {
+  background-color: #ffffff;
+  color: #1f2937;
+  max-width: 750px;
+  margin: 0 auto;
+  padding: 2.5rem;
+  font-family: var(--cv-font, "Manrope", sans-serif);
+}
+
+.t1-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  border-bottom: 2px solid var(--cv-accent, #2563eb);
+  padding-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.t1-photo {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.t1-header h1 {
+  font-size: 1.5rem;
+  color: #0f172a;
+  margin-bottom: 0.2rem;
+}
+
+.t1-target {
+  color: #2563eb;
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 0.6rem;
+}
+
+.t1-contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.8rem;
+  color: #4b5563;
+}
+
+.t1-contact i {
+  color: var(--cv-accent, #2563eb);
+  margin-right: 0.3rem;
+}
+
+.t1-section {
+  margin-bottom: 1.5rem;
+}
+
+.t1-section h2 {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #0f172a;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 0.4rem;
+  margin-bottom: 0.85rem;
+}
+
+.t1-entry {
+  margin-bottom: 0.9rem;
+}
+
+.t1-entry-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: #0f172a;
+  margin-bottom: 0.15rem;
+}
+
+.t1-entry-row span {
+  font-size: 0.8rem;
+  color: #6b7280;
+  font-weight: 400;
+}
+
+.t1-company {
+  font-size: 0.85rem;
+  color: var(--cv-accent, #2563eb);
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.t1-section p {
+  font-size: 0.85rem;
+  color: #374151;
+  line-height: 1.6;
+}
+
+.cv-density-compact .t1-section {
+  margin-bottom: 0.9rem;
+}
+
+.cv-density-compact .t1-entry {
+  margin-bottom: 0.5rem;
+}
+
+.t1-links {
+  margin-top: 0.4rem;
+}
+
+.t1-link {
+  font-size: 0.8rem;
+  color: var(--cv-accent, #2563eb);
+  word-break: break-all;
+}
+
+.t1-summary p {
+  line-height: 1.7;
+}
+
+@media print {
+  .t1-entry,
+  .t1-section {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}

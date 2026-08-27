@@ -1,0 +1,77 @@
+.about {
+  padding: 5rem 0;
+  background: linear-gradient(
+    180deg,
+    var(--color-navy) 0%,
+    var(--color-bg) 220px
+  );
+}
+
+.about-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+
+.about-title {
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  color: var(--color-navy);
+  margin-bottom: 1rem;
+}
+
+[data-theme="dark"] .about-title {
+  color: var(--color-text);
+}
+
+.about-description {
+  font-size: 1.05rem;
+  color: var(--color-text-muted);
+  line-height: 1.8;
+  max-width: 650px;
+}
+
+.about-stats {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.about-stat {
+  flex: 1;
+  min-width: 170px;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: 1.75rem;
+  text-align: center;
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition);
+}
+
+.about-stat:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.about-stat i {
+  font-size: 1.5rem;
+  color: var(--color-primary);
+  margin-bottom: 0.75rem;
+}
+
+.about-stat h3 {
+  font-size: 1.5rem;
+  color: var(--color-navy);
+  margin-bottom: 0.25rem;
+}
+
+[data-theme="dark"] .about-stat h3 {
+  color: var(--color-text);
+}
+
+.about-stat p {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}

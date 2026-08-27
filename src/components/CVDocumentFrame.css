@@ -1,0 +1,70 @@
+.cv-document-viewport {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cv-zoom-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 0.5rem 0.85rem;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 1rem;
+}
+
+.cv-zoom-controls button {
+  background: none;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 0.35rem 0.7rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition:
+    background-color var(--transition),
+    color var(--transition);
+}
+
+.cv-zoom-controls button:hover {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+.cv-zoom-controls button.active {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #ffffff;
+}
+
+.cv-zoom-level {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  min-width: 40px;
+  text-align: center;
+}
+
+.cv-document-outer {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+@media print {
+  .cv-document-outer {
+    overflow: visible !important;
+    height: auto !important;
+  }
+
+  #cv-print-area {
+    transform: none !important;
+    width: auto !important;
+  }
+}

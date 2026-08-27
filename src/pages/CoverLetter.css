@@ -1,0 +1,129 @@
+.cover-letter-page {
+  padding: 7rem 1rem 4rem;
+  min-height: 80vh;
+}
+
+.cover-letter-container {
+  max-width: 700px;
+}
+
+.cover-letter-container h1 {
+  color: var(--color-navy);
+  margin-bottom: 0.3rem;
+}
+
+[data-theme="dark"] .cover-letter-container h1 {
+  color: var(--color-text);
+}
+
+.cover-letter-subtitle {
+  color: var(--color-text-muted);
+  margin-bottom: 1.75rem;
+}
+
+.cover-letter-loading {
+  display: flex;
+  justify-content: center;
+  padding: 3rem 0;
+}
+
+.cover-letter-result {
+  padding: 2.5rem;
+}
+
+.cover-letter-text p {
+  color: var(--color-text);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin-bottom: 1.25rem;
+}
+
+.cover-letter-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.cover-letter-empty {
+  padding: 8rem 2rem 2rem;
+  text-align: center;
+  color: var(--color-text-muted);
+}
+
+.api-error {
+  background-color: rgba(220, 38, 38, 0.08);
+  color: #dc2626;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-sm);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.cover-letter-back-link-wrapper {
+  margin-bottom: 1rem;
+}
+
+.cover-letter-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: color var(--transition);
+}
+
+.cover-letter-back-link:hover {
+  color: var(--color-primary);
+}
+
+.cover-letter-next-steps {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-border);
+  flex-wrap: wrap;
+}
+
+.cover-letter-next-steps a {
+  text-decoration: none;
+}
+
+.cover-letter-letterhead {
+  margin-bottom: 2rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 2px solid var(--color-primary);
+}
+
+.cover-letter-letterhead h2 {
+  font-size: 1.2rem;
+  color: var(--color-navy);
+  margin-bottom: 0.3rem;
+}
+
+[data-theme="dark"] .cover-letter-letterhead h2 {
+  color: var(--color-text);
+}
+
+.cover-letter-letterhead p {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin-bottom: 0.15rem;
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  .cover-letter-page {
+    padding: 0;
+    background: none;
+  }
+}

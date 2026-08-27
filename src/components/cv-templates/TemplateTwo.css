@@ -1,0 +1,157 @@
+.template-two {
+  display: flex;
+  max-width: 750px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  font-family: var(--cv-font, "Manrope", sans-serif);
+  overflow: hidden;
+}
+
+.t2-sidebar {
+  width: 240px;
+  background-color: #0f172a;
+  color: #ffffff;
+  padding: 2rem 1.5rem;
+  flex-shrink: 0;
+}
+
+.t2-photo {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1.25rem;
+}
+
+.t2-sidebar h1 {
+  font-size: 1.2rem;
+  margin-bottom: 0.3rem;
+}
+
+.t2-target {
+  color: var(--cv-accent, #60a5fa);
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 1.75rem;
+}
+
+.t2-block {
+  margin-bottom: 1.75rem;
+}
+
+.t2-block h2 {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #94a3b8;
+  margin-bottom: 0.75rem;
+}
+
+.t2-block p {
+  font-size: 0.8rem;
+  color: #e2e8f0;
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+.t2-block i {
+  color: var(--cv-accent, #60a5fa);
+  margin-right: 0.4rem;
+  width: 14px;
+}
+
+.t2-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.t2-tags span {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #e2e8f0;
+  font-size: 0.72rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+}
+
+.t2-main {
+  flex: 1;
+  padding: 2rem 1.75rem;
+}
+
+.t2-section {
+  margin-bottom: 1.5rem;
+}
+
+.t2-section h2 {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #0f172a;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 0.4rem;
+  margin-bottom: 0.85rem;
+}
+
+.t2-entry {
+  margin-bottom: 0.9rem;
+}
+
+.t2-entry-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: #0f172a;
+  margin-bottom: 0.15rem;
+}
+
+.t2-entry-row span {
+  font-size: 0.8rem;
+  color: #6b7280;
+  font-weight: 400;
+}
+
+.t2-company {
+  font-size: 0.85rem;
+  color: var(--cv-accent, #2563eb);
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.t2-section p {
+  font-size: 0.85rem;
+  color: #374151;
+  line-height: 1.6;
+}
+
+.cv-density-compact .t2-section,
+.cv-density-compact .t2-block {
+  margin-bottom: 1rem;
+}
+
+.cv-density-compact .t2-entry {
+  margin-bottom: 0.5rem;
+}
+
+.t2-link {
+  font-size: 0.8rem;
+  color: var(--cv-accent, #2563eb);
+  word-break: break-all;
+}
+
+.t2-summary p {
+  line-height: 1.7;
+}
+
+@media print {
+  .t2-entry,
+  .t2-section,
+  .t2-block {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .t2-sidebar {
+    min-height: auto;
+  }
+}

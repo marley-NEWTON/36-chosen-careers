@@ -1,0 +1,105 @@
+.settings-page h1 {
+  color: var(--color-navy);
+  margin-bottom: 0.25rem;
+}
+
+[data-theme="dark"] .settings-page h1 {
+  color: var(--color-text);
+}
+
+.settings-subtitle {
+  color: var(--color-text-muted);
+  margin-bottom: 1.75rem;
+}
+
+.settings-section {
+  max-width: 480px;
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.settings-section h2 {
+  font-size: 1.05rem;
+  color: var(--color-text);
+  margin-bottom: 1.25rem;
+}
+
+.settings-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--color-text);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.toggle-switch {
+  width: 42px;
+  height: 24px;
+  border-radius: 999px;
+  background-color: var(--color-border);
+  border: none;
+  cursor: pointer;
+  position: relative;
+  transition: background-color var(--transition);
+}
+
+.toggle-switch.on {
+  background-color: var(--color-primary);
+}
+
+.toggle-knob {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  transition: transform var(--transition);
+}
+
+.toggle-switch.on .toggle-knob {
+  transform: translateX(18px);
+}
+
+.settings-section label {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 0.4rem;
+}
+
+.settings-section input {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 0.7rem 0.9rem;
+  font-size: 0.9rem;
+  font-family: inherit;
+  margin-bottom: 1.25rem;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  transition: border-color var(--transition);
+}
+
+.settings-section input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.input-error {
+  border-color: #dc2626 !important;
+}
+
+.field-error {
+  font-size: 0.8rem;
+  color: #dc2626;
+  margin-top: -0.9rem;
+  margin-bottom: 1.25rem;
+}
+
+.settings-submit {
+  align-self: flex-start;
+}

@@ -1,0 +1,102 @@
+.template-preview-page {
+  padding: 7rem 1rem 3rem;
+  background-color: #f1f5f9;
+  min-height: 100vh;
+}
+
+.template-preview-controls {
+  max-width: 750px;
+  margin: 0 auto 1.5rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.template-preview-back-link-wrapper {
+  max-width: 750px;
+  margin: 0 auto 1rem;
+}
+
+.template-preview-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: color var(--transition);
+}
+
+.template-preview-back-link:hover {
+  color: var(--color-primary);
+}
+
+.template-preview-empty {
+  padding: 8rem 2rem 2rem;
+  text-align: center;
+  color: var(--color-text-muted);
+}
+
+.print-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--color-primary);
+  color: #ffffff;
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 0.7rem 1.25rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: background-color var(--transition);
+}
+
+.print-btn:hover {
+  background-color: var(--color-primary-dark);
+}
+
+.pdf-btn {
+  background-color: var(--color-accent);
+}
+
+.pdf-btn:hover {
+  background-color: var(--color-accent-dark);
+}
+
+.pdf-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  #cv-print-area,
+  #cv-print-area * {
+    visibility: visible;
+  }
+
+  #cv-print-area {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .template-preview-page {
+    padding: 0;
+    background: none;
+  }
+
+  @page {
+    margin: 1.5cm 1.2cm;
+  }
+}

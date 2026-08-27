@@ -1,0 +1,19 @@
+.dashboard-home h1 {
+  color: var(--color-navy);
+  margin-bottom: 0.25rem;
+}
+
+[data-theme="dark"] .dashboard-home h1 {
+  color: var(--color-text);
+}
+
+.dashboard-home-subtitle {
+  color: var(--color-text-muted);
+  margin-bottom: 1.75rem;
+}
+
+.dashboard-home-card {
+  padding: 2rem;
+  color: var(--color-text);
+  font-size: 0.9rem;
+}
