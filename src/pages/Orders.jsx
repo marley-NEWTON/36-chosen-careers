@@ -111,7 +111,7 @@ function Orders() {
                       </span>
                     </td>
 
-                    <td>${order.price}</td>
+                    <td>KSh {order.price.toLocaleString()}</td>
 
                     <td>
                       {order.status === "Completed" &&
