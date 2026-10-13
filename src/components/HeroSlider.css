@@ -1,188 +1,1350 @@
+/* =========================================
+   36 CHOSEN CAREERS
+   STATIC HERO — NAVY & GOLD
+========================================= */
+
 .hero-slider {
   position: relative;
-  height: 90vh;
-  min-height: 560px;
+  isolation: isolate;
   overflow: hidden;
-  background-color: var(--color-navy);
+
+  min-height: 650px;
+
+  background:
+    radial-gradient(
+      ellipse at 78% 42%,
+      rgba(31, 62, 83, 0.4) 0%,
+      transparent 48%
+    ),
+    linear-gradient(115deg, #071522 0%, #091a29 52%, #10283a 100%);
+
+  color: #ffffff;
 }
 
-.hero-slide {
+/* ---------- BACKGROUND LIGHT ---------- */
+
+.hero-glow {
   position: absolute;
-  inset: 0;
-  opacity: 0;
-  visibility: hidden;
-  transform: scale(1.03);
-  transition:
-    opacity 1s ease,
-    transform 1.2s ease,
-    visibility 1s;
+  z-index: -1;
+
+  width: 360px;
+  height: 360px;
+
+  border-radius: 50%;
+  filter: blur(100px);
+  pointer-events: none;
 }
 
-.hero-slide.active {
-  opacity: 1;
-  visibility: visible;
-  transform: scale(1);
-  z-index: 1;
+.hero-glow-one {
+  top: -190px;
+  left: -100px;
+
+  background: rgba(244, 198, 106, 0.09);
 }
 
-.hero-slide-bg {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
+.hero-glow-two {
+  right: -140px;
+  bottom: -210px;
+
+  background: rgba(54, 107, 139, 0.18);
 }
 
-.hero-slide-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    90deg,
-    rgba(15, 23, 42, 0.88) 0%,
-    rgba(15, 23, 42, 0.55) 50%,
-    rgba(15, 23, 42, 0.25) 100%
-  );
-}
+/* ---------- MAIN LAYOUT ---------- */
 
-.hero-slide-content {
+.hero-inner {
   position: relative;
-  z-index: 1;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  max-width: 640px;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.95fr);
+  align-items: center;
+
+  width: 100%;
+  max-width: 1440px;
+  min-height: 650px;
+
+  margin: 0 auto;
+  padding: 76px 6% 82px;
+
+  gap: clamp(2rem, 5vw, 5rem);
+}
+
+/* ---------- HERO CONTENT ---------- */
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+
+  max-width: 620px;
 }
 
 .hero-badge {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  background-color: rgba(16, 185, 129, 0.15);
-  color: var(--color-accent);
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-  padding: 0.4rem 0.9rem;
-  border-radius: 999px;
-  margin-bottom: 1.5rem;
+  gap: 0.65rem;
+
   width: fit-content;
+  max-width: 100%;
+
+  margin-bottom: 1.8rem;
+  padding: 0.55rem 0.95rem;
+
+  border: 1px solid rgba(244, 198, 106, 0.27);
+  border-radius: 999px;
+
+  background: rgba(244, 198, 106, 0.07);
+  color: #f4d58f;
+
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.09em;
 }
 
 .hero-badge-dot {
-  font-size: 0.4rem;
+  width: 7px;
+  height: 7px;
+  flex-shrink: 0;
+
+  border-radius: 50%;
+  background: #f4c66a;
+
+  box-shadow: 0 0 12px rgba(244, 198, 106, 0.7);
 }
 
 .hero-title {
-  font-size: clamp(2.25rem, 5vw, 3.25rem);
+  max-width: 650px;
+
+  margin-bottom: 1.5rem;
+
   color: #ffffff;
-  margin-bottom: 1.25rem;
+
+  font-size: clamp(2.8rem, 5.1vw, 4.65rem);
+  font-weight: 850;
+  line-height: 1.07;
+  letter-spacing: -0.065em;
+}
+
+.hero-title span {
+  color: #f4c66a;
 }
 
 .hero-subtitle {
-  font-size: 1.05rem;
-  color: #cbd5e1;
-  max-width: 480px;
+  max-width: 500px;
+
   margin-bottom: 2rem;
+
+  color: #b8c4ce;
+
+  font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+  line-height: 1.9;
 }
+
+/* ---------- CTA BUTTONS ---------- */
 
 .hero-actions {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
   flex-wrap: wrap;
+
+  gap: 1rem;
+  margin-bottom: 2.5rem;
 }
 
 .hero-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+
+  min-height: 51px;
+  padding: 0.9rem 1.4rem;
+
+  border: 1px solid #f4c66a;
   border-radius: 999px;
+
+  background: linear-gradient(135deg, #f8d98e, #edb94c);
+  color: #071522;
+
+  font-size: 0.85rem;
+  font-weight: 850;
+  text-decoration: none;
+
+  box-shadow: 0 8px 24px rgba(219, 169, 64, 0.16);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    filter 0.25s ease;
+}
+
+.hero-cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(219, 169, 64, 0.25);
+  filter: brightness(1.04);
+}
+
+.hero-cta i {
+  font-size: 0.8rem;
 }
 
 .hero-secondary {
   display: inline-flex;
   align-items: center;
-  gap: 0.6rem;
-  color: #ffffff;
+  gap: 0.7rem;
+
+  color: #e2e8ed;
+
+  font-size: 0.83rem;
+  font-weight: 700;
   text-decoration: none;
-  font-weight: 600;
-  font-size: 0.95rem;
+
+  transition: color 0.25s ease;
 }
 
-.hero-secondary i {
-  font-size: 1.4rem;
+.hero-secondary:hover {
+  color: #f4c66a;
 }
 
-.hero-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 2;
-  width: 44px;
-  height: 44px;
+.hero-secondary-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 39px;
+  height: 39px;
+
+  border: 1px solid rgba(255, 255, 255, 0.19);
   border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  background-color: rgba(255, 255, 255, 0.08);
-  color: #ffffff;
-  cursor: pointer;
+
+  color: #f4c66a;
+  background: rgba(255, 255, 255, 0.04);
+
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.hero-secondary:hover .hero-secondary-icon {
+  border-color: #f4c66a;
+  background: rgba(244, 198, 106, 0.1);
+}
+
+/* ---------- TRUST POINTS ---------- */
+
+.hero-trust {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 1rem;
+}
+
+.hero-trust-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  color: #c1ccd5;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.hero-trust-item i {
+  color: #f4c66a;
+  font-size: 0.8rem;
+}
+
+.hero-trust-divider {
+  width: 1px;
+  height: 17px;
+
+  background: rgba(255, 255, 255, 0.17);
+}
+
+/* ---------- CV PREVIEW AREA ---------- */
+
+.hero-visual {
+  position: relative;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  transition:
-    background-color var(--transition),
-    border-color var(--transition);
+
+  min-width: 0;
+  min-height: 465px;
 }
 
-.hero-arrow:hover {
-  background-color: rgba(255, 255, 255, 0.18);
-  border-color: rgba(255, 255, 255, 0.6);
-}
-
-.hero-arrow-left {
-  left: 1.5rem;
-}
-
-.hero-arrow-right {
-  right: 1.5rem;
-}
-
-.hero-indicators {
+.hero-visual-orbit {
   position: absolute;
-  bottom: 1.75rem;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 2;
-  display: flex;
-  gap: 0.6rem;
-}
 
-.hero-dot {
-  width: 10px;
-  height: 10px;
+  border: 1px solid rgba(244, 198, 106, 0.12);
   border-radius: 50%;
-  border: none;
-  background-color: rgba(255, 255, 255, 0.35);
-  cursor: pointer;
+
+  pointer-events: none;
+}
+
+.hero-orbit-one {
+  width: 410px;
+  height: 410px;
+}
+
+.hero-orbit-two {
+  width: 490px;
+  height: 490px;
+
+  border-color: rgba(255, 255, 255, 0.055);
+}
+
+/* ---------- RESUME SHEET ---------- */
+
+.hero-resume {
+  position: relative;
+  z-index: 1;
+
+  display: grid;
+  grid-template-columns: 32% 68%;
+
+  width: min(100%, 445px);
+  min-height: 390px;
+
+  overflow: hidden;
+
+  background: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  border-radius: 7px;
+
+  box-shadow:
+    0 35px 80px rgba(0, 0, 0, 0.36),
+    0 0 0 8px rgba(255, 255, 255, 0.035);
+
+  transform: rotate(2deg);
+
   transition:
-    background-color var(--transition),
-    transform var(--transition);
+    transform 0.45s ease,
+    box-shadow 0.45s ease;
 }
 
-.hero-dot.active {
-  background-color: var(--color-accent);
-  transform: scale(1.2);
+.hero-visual:hover .hero-resume {
+  transform: rotate(0deg) translateY(-4px);
+
+  box-shadow:
+    0 40px 90px rgba(0, 0, 0, 0.4),
+    0 0 0 8px rgba(255, 255, 255, 0.05);
 }
 
-@media (max-width: 768px) {
-  .hero-slider {
-    height: 100vh;
-    min-height: 500px;
+/* ---------- RESUME SIDEBAR ---------- */
+
+.hero-resume-sidebar {
+  padding: 1.2rem 0.85rem;
+
+  background: #102b3c;
+}
+
+.hero-resume-monogram {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 54px;
+  height: 54px;
+
+  margin-bottom: 1.4rem;
+
+  border: 1px solid rgba(244, 198, 106, 0.65);
+  border-radius: 50%;
+
+  color: #f4c66a;
+
+  font-size: 1rem;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+}
+
+.hero-resume-side-line {
+  width: 82%;
+  height: 4px;
+
+  margin-bottom: 7px;
+
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.45);
+}
+
+.hero-resume-side-line.wide {
+  width: 100%;
+}
+
+.hero-resume-side-line.short {
+  width: 58%;
+}
+
+.hero-resume-side-heading {
+  margin: 1.35rem 0 0.7rem;
+
+  color: #f4c66a;
+
+  font-size: 0.49rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+}
+
+.hero-skill {
+  width: 100%;
+  height: 5px;
+
+  margin-bottom: 10px;
+
+  overflow: hidden;
+  border-radius: 5px;
+
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.hero-skill span {
+  display: block;
+  width: 88%;
+  height: 100%;
+
+  border-radius: inherit;
+  background: #f4c66a;
+}
+
+.hero-skill .skill-two {
+  width: 70%;
+}
+
+.hero-skill .skill-three {
+  width: 80%;
+}
+
+.hero-skill .skill-four {
+  width: 60%;
+}
+
+/* ---------- RESUME MAIN ---------- */
+
+.hero-resume-main {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 1.25rem 1rem 1rem;
+
+  background: #ffffff;
+}
+
+.hero-resume-topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 1.1rem;
+
+  color: #82909b;
+
+  font-size: 0.43rem;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+}
+
+.hero-resume-topline i {
+  color: #c79a3e;
+  font-size: 0.85rem;
+}
+
+.hero-resume-profile {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+
+  margin-bottom: 1.15rem;
+}
+
+.hero-resume-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 43px;
+  height: 48px;
+  flex-shrink: 0;
+
+  border-radius: 4px;
+
+  background: #e7e9e9;
+  color: #a1a9af;
+
+  font-size: 1.7rem;
+}
+
+.hero-resume-name {
+  flex: 1;
+}
+
+.hero-resume-name-line {
+  width: 90%;
+  height: 8px;
+
+  margin-bottom: 7px;
+
+  border-radius: 3px;
+  background: #17364b;
+}
+
+.hero-resume-role-line {
+  width: 65%;
+  height: 5px;
+
+  border-radius: 3px;
+  background: #d1a54e;
+}
+
+.hero-resume-section {
+  margin-bottom: 0.85rem;
+}
+
+.hero-resume-section h3 {
+  margin-bottom: 0.55rem;
+
+  color: #19394f;
+
+  font-size: 0.48rem;
+  font-weight: 900;
+  letter-spacing: 0.055em;
+}
+
+.hero-resume-line {
+  width: 100%;
+  height: 4px;
+
+  margin-bottom: 5px;
+
+  border-radius: 3px;
+  background: #e1e5e8;
+}
+
+.hero-resume-line.short-line {
+  width: 66%;
+}
+
+.hero-resume-line.medium-line {
+  width: 83%;
+}
+
+.hero-resume-experience {
+  display: flex;
+  gap: 0.55rem;
+
+  margin-bottom: 0.65rem;
+}
+
+.hero-resume-timeline {
+  width: 5px;
+  min-height: 30px;
+  flex-shrink: 0;
+
+  border-radius: 3px;
+  background: #d5ad60;
+}
+
+.hero-resume-experience-content {
+  flex: 1;
+}
+
+.hero-resume-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+
+  margin-top: auto;
+  padding-top: 0.65rem;
+
+  border-top: 1px solid #e7e9eb;
+
+  color: #7d8992;
+
+  font-size: 0.34rem;
+  font-weight: 800;
+  letter-spacing: 0.035em;
+}
+
+/* ---------- FLOATING LABELS ---------- */
+
+.hero-floating-label {
+  position: absolute;
+  z-index: 3;
+
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+
+  padding: 0.8rem 1rem;
+
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  border-radius: 12px;
+
+  background: rgba(17, 39, 55, 0.96);
+
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.23);
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.hero-label-top {
+  top: 25px;
+  right: -5px;
+}
+
+.hero-label-bottom {
+  bottom: 22px;
+  left: -15px;
+}
+
+.hero-label-icon,
+.hero-label-check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+
+  border-radius: 9px;
+
+  background: rgba(244, 198, 106, 0.12);
+  color: #f4c66a;
+}
+
+.hero-label-check {
+  width: 31px;
+  height: 31px;
+
+  border-radius: 50%;
+
+  background: #f4c66a;
+  color: #071522;
+
+  font-size: 0.8rem;
+}
+
+.hero-floating-label > span:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.hero-floating-label strong {
+  color: #ffffff;
+  font-size: 0.7rem;
+  font-weight: 800;
+}
+
+.hero-floating-label small {
+  color: #b4c0c9;
+  font-size: 0.62rem;
+}
+
+/* ---------- GOLD DECORATION ---------- */
+
+.hero-gold-decoration {
+  position: absolute;
+  z-index: 0;
+
+  right: 4px;
+  bottom: 4px;
+
+  width: 90px;
+  height: 90px;
+
+  border-right: 2px solid rgba(244, 198, 106, 0.45);
+  border-bottom: 2px solid rgba(244, 198, 106, 0.45);
+
+  border-radius: 0 0 28px 0;
+
+  pointer-events: none;
+}
+
+/* ---------- BOTTOM BORDER ---------- */
+
+.hero-bottom-border {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  height: 3px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(244, 198, 106, 0.65),
+    #f4c66a,
+    rgba(244, 198, 106, 0.65),
+    transparent
+  );
+
+  opacity: 0.75;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (min-width: 1441px) {
+  .hero-inner {
+    padding-right: 7%;
+    padding-left: 7%;
+  }
+}
+
+/* Tablets and small laptops */
+
+@media (max-width: 1050px) {
+  .hero-inner {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr);
+
+    gap: 2rem;
+    padding-right: 4%;
+    padding-left: 4%;
   }
 
-  .hero-slide-content {
-    text-align: left;
+  .hero-title {
+    font-size: clamp(2.6rem, 5vw, 3.6rem);
   }
 
-  .hero-arrow {
-    width: 36px;
-    height: 36px;
+  .hero-resume {
+    width: 100%;
+  }
+
+  .hero-label-top {
+    right: -5px;
+  }
+
+  .hero-label-bottom {
+    left: -5px;
+  }
+
+  .hero-trust {
+    gap: 0.7rem;
+  }
+
+  .hero-trust-item {
+    font-size: 0.64rem;
+  }
+}
+
+/* Tablets */
+
+@media (max-width: 800px) {
+  .hero-inner {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+
+    padding: 70px 7% 75px;
+  }
+
+  .hero-content {
+    max-width: 650px;
+  }
+
+  .hero-title {
+    max-width: 620px;
+    font-size: clamp(3rem, 8vw, 4.5rem);
+  }
+
+  .hero-subtitle {
+    max-width: 580px;
+  }
+
+  .hero-visual {
+    width: 100%;
+    max-width: 530px;
+    min-height: 470px;
+
+    margin: 0 auto;
+  }
+
+  .hero-resume {
+    width: min(100%, 420px);
+    min-height: 390px;
+  }
+
+  .hero-orbit-one {
+    width: 380px;
+    height: 380px;
+  }
+
+  .hero-orbit-two {
+    width: 450px;
+    height: 450px;
+  }
+
+  .hero-label-top {
+    right: 0;
+  }
+
+  .hero-label-bottom {
+    left: 0;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 520px) {
+  .hero-inner {
+    padding: 52px 1.2rem 60px;
+    gap: 2.5rem;
+  }
+
+  .hero-badge {
+    margin-bottom: 1.35rem;
+    padding: 0.5rem 0.75rem;
+
+    font-size: 0.57rem;
+    letter-spacing: 0.055em;
+  }
+
+  .hero-title {
+    margin-bottom: 1.2rem;
+
+    font-size: clamp(2.5rem, 11vw, 3.5rem);
+    line-height: 1.09;
+  }
+
+  .hero-subtitle {
+    margin-bottom: 1.6rem;
+    font-size: 0.92rem;
+    line-height: 1.85;
+  }
+
+  .hero-actions {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1rem;
+
+    margin-bottom: 2rem;
+  }
+
+  .hero-cta {
+    min-height: 49px;
+    padding: 0.85rem 1.2rem;
+  }
+
+  .hero-trust {
+    gap: 0.75rem 0.85rem;
+  }
+
+  .hero-trust-item {
+    font-size: 0.63rem;
+  }
+
+  .hero-trust-divider {
+    display: none;
+  }
+
+  .hero-visual {
+    min-height: 375px;
+  }
+
+  .hero-resume {
+    grid-template-columns: 30% 70%;
+
+    width: 84%;
+    min-height: 325px;
+  }
+
+  .hero-resume-sidebar {
+    padding: 0.9rem 0.65rem;
+  }
+
+  .hero-resume-monogram {
+    width: 42px;
+    height: 42px;
+
+    margin-bottom: 1rem;
+    font-size: 0.85rem;
+  }
+
+  .hero-resume-side-heading {
+    margin-top: 1rem;
+    font-size: 0.43rem;
+  }
+
+  .hero-resume-main {
+    padding: 0.9rem 0.7rem 0.7rem;
+  }
+
+  .hero-resume-topline {
+    margin-bottom: 0.8rem;
+    font-size: 0.36rem;
+  }
+
+  .hero-resume-avatar {
+    width: 35px;
+    height: 39px;
+    font-size: 1.3rem;
+  }
+
+  .hero-resume-section {
+    margin-bottom: 0.65rem;
+  }
+
+  .hero-resume-section h3 {
+    font-size: 0.41rem;
+  }
+
+  .hero-resume-line {
+    height: 3px;
+    margin-bottom: 4px;
+  }
+
+  .hero-resume-footer {
+    font-size: 0.27rem;
+  }
+
+  .hero-floating-label {
+    gap: 0.5rem;
+    padding: 0.65rem 0.7rem;
+  }
+
+  .hero-label-top {
+    top: 4px;
+    right: -3px;
+  }
+
+  .hero-label-bottom {
+    bottom: 4px;
+    left: -3px;
+  }
+
+  .hero-label-icon {
+    width: 29px;
+    height: 29px;
+    font-size: 0.75rem;
+  }
+
+  .hero-label-check {
+    width: 27px;
+    height: 27px;
+    font-size: 0.7rem;
+  }
+
+  .hero-floating-label strong {
+    font-size: 0.59rem;
+  }
+
+  .hero-floating-label small {
+    font-size: 0.53rem;
+  }
+
+  .hero-orbit-one {
+    width: 290px;
+    height: 290px;
+  }
+
+  .hero-orbit-two {
+    width: 350px;
+    height: 350px;
+  }
+
+  .hero-gold-decoration {
+    width: 55px;
+    height: 55px;
+  }
+}
+
+/* Small phones */
+
+@media (max-width: 360px) {
+  .hero-inner {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+
+  .hero-title {
+    font-size: 2.35rem;
+  }
+
+  .hero-trust {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero-visual {
+    min-height: 340px;
+  }
+
+  .hero-resume {
+    width: 86%;
+    min-height: 300px;
+  }
+}
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-cta,
+  .hero-secondary,
+  .hero-secondary-icon,
+  .hero-resume {
+    transition: none;
+  }
+
+  .hero-visual:hover .hero-resume {
+    transform: rotate(2deg);
+  }
+}
+
+/* =========================================
+   36 CHOSEN CAREERS — HERO POLISH
+   Enhanced visual design
+========================================= */
+
+/* Richer background atmosphere */
+.hero-slider {
+  background:
+    radial-gradient(
+      circle at 78% 35%,
+      rgba(198, 155, 45, 0.12) 0%,
+      transparent 27%
+    ),
+    radial-gradient(
+      ellipse at 12% 85%,
+      rgba(43, 91, 119, 0.22) 0%,
+      transparent 38%
+    ),
+    linear-gradient(125deg, #06111e 0%, #0a1d2d 48%, #102a3c 100%);
+}
+
+/* Subtle background glow */
+.hero-glow-one {
+  width: 430px;
+  height: 430px;
+  background: rgba(226, 180, 76, 0.12);
+  filter: blur(115px);
+}
+
+.hero-glow-two {
+  width: 480px;
+  height: 480px;
+  background: rgba(55, 112, 145, 0.2);
+  filter: blur(125px);
+}
+
+/* Better spacing and depth */
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  padding-top: clamp(70px, 7vw, 100px);
+  padding-bottom: clamp(75px, 8vw, 110px);
+}
+
+/* Refined badge */
+.hero-badge {
+  border-color: rgba(244, 198, 106, 0.4);
+  background: linear-gradient(
+    135deg,
+    rgba(244, 198, 106, 0.12),
+    rgba(244, 198, 106, 0.035)
+  );
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.045);
+  line-height: 1.7;
+}
+
+.hero-badge-dot {
+  flex-shrink: 0;
+  animation: hero-dot-pulse 2.8s ease-in-out infinite;
+}
+
+@keyframes hero-dot-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(244, 198, 106, 0.3);
+  }
+
+  50% {
+    box-shadow: 0 0 0 6px rgba(244, 198, 106, 0);
+  }
+}
+
+/* More refined headline */
+.hero-title {
+  max-width: 680px;
+  font-size: clamp(2.8rem, 5vw, 4.7rem);
+  line-height: 1.1;
+  letter-spacing: -0.045em;
+  text-wrap: balance;
+}
+
+.hero-title span {
+  display: inline-block;
+  background: linear-gradient(110deg, #f8dfa0 0%, #e6b94f 48%, #f7d991 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Improve readability for both languages */
+.hero-subtitle {
+  max-width: 540px;
+  color: #c1ced8;
+  font-size: clamp(0.97rem, 1.15vw, 1.08rem);
+  line-height: 1.9;
+  text-wrap: pretty;
+}
+
+/* Premium primary button */
+.hero-cta {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 229, 169, 0.8);
+  background: linear-gradient(120deg, #f7d98f 0%, #e7b64b 52%, #f5d58b 100%);
+  color: #071522;
+  box-shadow:
+    0 10px 28px rgba(219, 169, 64, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.45);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    filter 0.25s ease;
+}
+
+.hero-cta:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 16px 35px rgba(219, 169, 64, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.45);
+  filter: brightness(1.04);
+}
+
+.hero-cta i {
+  transition: transform 0.25s ease;
+}
+
+.hero-cta:hover i {
+  transform: translateX(4px);
+}
+
+/* Refined secondary button */
+.hero-secondary {
+  min-height: 48px;
+  line-height: 1.6;
+}
+
+.hero-secondary-icon {
+  flex-shrink: 0;
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.hero-secondary:hover .hero-secondary-icon {
+  transform: translateY(-2px);
+}
+
+/* Trust indicators */
+.hero-trust {
+  row-gap: 0.9rem;
+}
+
+.hero-trust-item {
+  line-height: 1.7;
+}
+
+.hero-trust-item i {
+  flex-shrink: 0;
+}
+
+/* CV preview: stronger depth */
+.hero-resume {
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: 10px;
+  box-shadow:
+    0 38px 90px rgba(0, 0, 0, 0.38),
+    0 0 0 1px rgba(244, 198, 106, 0.12),
+    0 0 65px rgba(244, 198, 106, 0.055);
+  transform: perspective(1200px) rotateY(-4deg) rotate(1deg);
+  transition:
+    transform 0.45s ease,
+    box-shadow 0.45s ease;
+}
+
+.hero-visual:hover .hero-resume {
+  transform: perspective(1200px) rotateY(0deg) rotate(0deg) translateY(-5px);
+  box-shadow:
+    0 45px 100px rgba(0, 0, 0, 0.42),
+    0 0 0 1px rgba(244, 198, 106, 0.2),
+    0 0 75px rgba(244, 198, 106, 0.08);
+}
+
+/* Richer resume sidebar */
+.hero-resume-sidebar {
+  background: linear-gradient(160deg, #15394d 0%, #102b3c 55%, #0b2131 100%);
+}
+
+/* Resume headings */
+.hero-resume-section h3 {
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.hero-resume-side-heading {
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+/* Floating information cards */
+.hero-floating-label {
+  border-color: rgba(244, 198, 106, 0.2);
+  background: rgba(12, 31, 45, 0.96);
+  box-shadow:
+    0 18px 40px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.045);
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.hero-label-top {
+  right: 0;
+  transform: translateY(-3px);
+}
+
+.hero-label-bottom {
+  left: -8px;
+}
+
+.hero-visual:hover .hero-label-top {
+  transform: translateY(-7px);
+}
+
+.hero-label-icon {
+  flex-shrink: 0;
+}
+
+.hero-label-check {
+  flex-shrink: 0;
+}
+
+/* Decorative frame */
+.hero-gold-decoration {
+  border-color: rgba(244, 198, 106, 0.65);
+  border-radius: 0 0 30px 0;
+}
+
+/* Elegant bottom accent */
+.hero-bottom-border {
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(244, 198, 106, 0.35) 15%,
+    #f4c66a 50%,
+    rgba(244, 198, 106, 0.35) 85%,
+    transparent 100%
+  );
+  opacity: 0.9;
+}
+
+/* Tablet refinements */
+@media (max-width: 800px) {
+  .hero-inner {
+    gap: 2.5rem;
+  }
+
+  .hero-title {
+    max-width: 650px;
+    text-wrap: balance;
+  }
+
+  .hero-subtitle {
+    max-width: 620px;
+  }
+
+  .hero-resume {
+    transform: rotate(1deg);
+  }
+
+  .hero-visual:hover .hero-resume {
+    transform: rotate(0deg) translateY(-3px);
+  }
+}
+
+/* Mobile refinements */
+@media (max-width: 520px) {
+  .hero-inner {
+    padding-top: 48px;
+    padding-bottom: 55px;
+  }
+
+  .hero-badge {
+    max-width: 100%;
+    white-space: normal;
+    line-height: 1.7;
+  }
+
+  .hero-title {
+    font-size: clamp(2.4rem, 10.5vw, 3.35rem);
+    line-height: 1.12;
+    letter-spacing: -0.04em;
+    overflow-wrap: anywhere;
+  }
+
+  .hero-subtitle {
+    font-size: 0.94rem;
+    line-height: 1.85;
+  }
+
+  .hero-cta {
+    max-width: 100%;
+    white-space: normal;
+    text-align: center;
+  }
+
+  .hero-secondary {
+    max-width: 100%;
+    align-items: center;
+  }
+
+  .hero-trust-item {
+    line-height: 1.7;
+  }
+
+  .hero-resume {
+    transform: none;
+  }
+
+  .hero-visual:hover .hero-resume {
+    transform: translateY(-2px);
+  }
+
+  .hero-label-top {
+    right: -2px;
+  }
+
+  .hero-label-bottom {
+    left: -2px;
+  }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .hero-badge-dot {
+    animation: none;
+  }
+
+  .hero-cta,
+  .hero-cta i,
+  .hero-secondary-icon,
+  .hero-resume,
+  .hero-floating-label {
+    transition: none;
+  }
+
+  .hero-visual:hover .hero-resume {
+    transform: none;
   }
 }

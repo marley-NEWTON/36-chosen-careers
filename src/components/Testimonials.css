@@ -1,66 +1,430 @@
-.testimonials {
-  padding: 5rem 0;
-  background-color: var(--color-surface);
+/* ========================================
+   HOW IT WORKS SECTION
+======================================== */
+
+.how-it-works {
+  position: relative;
+  padding: 6rem 0;
+  overflow: hidden;
+  background: var(--color-surface);
 }
 
-.testimonials-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.75rem;
+.how-it-works .container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 5vw, 76px);
 }
 
-.testimonial-card {
-  background-color: var(--color-bg);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-sm);
-  padding: 2rem;
-  transition:
-    transform var(--transition),
-    box-shadow var(--transition);
+/* ========================================
+   SECTION HEADING
+======================================== */
+
+.how-heading {
+  width: 100%;
+  max-width: 850px;
+  margin-bottom: 3.5rem;
 }
 
-.testimonial-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
-}
-
-.testimonial-card i {
-  font-size: 1.25rem;
+.how-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: 1.25rem;
   color: var(--color-primary);
-  margin-bottom: 1rem;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
 }
 
-.testimonial-quote {
-  font-size: 0.95rem;
+.how-eyebrow-line {
+  display: inline-block;
+  width: 30px;
+  height: 3px;
+  border-radius: 10px;
+  background: var(--color-accent);
+}
+
+.how-title {
+  margin: 0 0 1.1rem;
+  color: var(--color-navy);
+  font-size: clamp(2.2rem, 4vw, 3.6rem);
+  font-weight: 850;
+  line-height: 1.12;
+  letter-spacing: -0.045em;
+}
+
+.how-title span {
+  color: var(--color-primary);
+}
+
+.how-description {
+  max-width: 720px;
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 1.02rem;
+  line-height: 1.85;
+}
+
+[data-theme="dark"] .how-title {
   color: var(--color-text);
-  line-height: 1.75;
-  margin-bottom: 1.5rem;
 }
 
-.testimonial-author h4 {
-  font-size: 1rem;
+[data-theme="dark"] .how-title span {
+  color: var(--color-accent);
+}
+
+/* ========================================
+   STEPS GRID
+======================================== */
+
+.how-steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1.25rem, 2.5vw, 2rem);
+  align-items: stretch;
+}
+
+/* ========================================
+   STEP CARD
+======================================== */
+
+.how-step-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: clamp(1.5rem, 2.5vw, 2.25rem);
+  overflow: hidden;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 22px;
+  box-shadow: var(--shadow-sm);
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.how-step-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+
+.how-step-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-lg);
+}
+
+.how-step-card:hover::before {
+  transform: scaleX(1);
+}
+
+/* ========================================
+   STEP NUMBER AND ICON
+======================================== */
+
+.how-step-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.how-step-number {
+  color: var(--color-primary);
+  font-size: 2.5rem;
+  font-weight: 850;
+  line-height: 1;
+  letter-spacing: -0.06em;
+  opacity: 0.9;
+}
+
+.how-step-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  flex-shrink: 0;
+  color: var(--color-primary);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 17px;
+  font-size: 1.4rem;
+  transition:
+    color 0.25s ease,
+    background-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.how-step-card:hover .how-step-icon {
+  color: var(--color-navy);
+  background: var(--color-accent);
+  transform: rotate(-4deg);
+}
+
+[data-theme="dark"] .how-step-number,
+[data-theme="dark"] .how-step-icon {
+  color: var(--color-accent);
+}
+
+[data-theme="dark"] .how-step-card:hover .how-step-icon {
   color: var(--color-navy);
 }
 
-[data-theme="dark"] .testimonial-author h4 {
+/* ========================================
+   STEP CONTENT
+======================================== */
+
+.how-step-card h3 {
+  margin: 0 0 0.85rem;
+  color: var(--color-navy);
+  font-size: clamp(1.2rem, 1.8vw, 1.45rem);
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+.how-step-card p {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.85;
+}
+
+[data-theme="dark"] .how-step-card h3 {
   color: var(--color-text);
 }
 
-.testimonial-author span {
-  display: block;
-  font-size: 0.85rem;
-  color: var(--color-text-muted);
+/* ========================================
+   ACTION AREA
+======================================== */
+
+.how-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 3rem;
+  padding: 1.75rem 2rem;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 18px;
 }
 
-.testimonial-service {
-  color: var(--color-primary) !important;
-  font-weight: 600;
-  margin-top: 0.25rem;
+.how-actions > p {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
 }
+
+.how-buttons {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+}
+
+/* ========================================
+   ACTION BUTTONS
+======================================== */
+
+.how-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  min-height: 50px;
+  padding: 0.9rem 1.2rem;
+  border: 1px solid transparent;
+  border-radius: 11px;
+  font-size: 0.9rem;
+  font-weight: 750;
+  line-height: 1.4;
+  text-decoration: none;
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.how-button i {
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.how-button:hover i {
+  transform: translateX(3px);
+}
+
+.how-button-primary {
+  color: #ffffff;
+  background: var(--color-primary);
+}
+
+.how-button-primary:hover {
+  color: var(--color-navy);
+  background: var(--color-accent);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.how-button-secondary {
+  color: var(--color-primary);
+  background: transparent;
+  border-color: var(--color-border);
+}
+
+.how-button-secondary:hover {
+  color: var(--color-navy);
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  transform: translateY(-2px);
+}
+
+.how-button:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 4px;
+}
+
+/* ========================================
+   TABLET
+======================================== */
 
 @media (max-width: 992px) {
-  .testimonials-grid {
-    grid-template-columns: 1fr;
+  .how-it-works {
+    padding: 5rem 0;
+  }
+
+  .how-it-works .container {
+    padding-right: 28px;
+    padding-left: 28px;
+  }
+
+  .how-steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+  }
+
+  .how-step-card:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .how-actions {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 576px) {
+  .how-it-works {
+    padding: 4rem 0;
+  }
+
+  .how-it-works .container {
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+
+  .how-heading {
+    margin-bottom: 2rem;
+  }
+
+  .how-title {
+    font-size: clamp(2rem, 8vw, 2.5rem);
+  }
+
+  .how-description {
+    font-size: 0.94rem;
+    line-height: 1.8;
+  }
+
+  .how-steps {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+  }
+
+  .how-step-card,
+  .how-step-card:last-child {
+    grid-column: auto;
+    padding: 1.5rem;
+    border-radius: 17px;
+  }
+
+  .how-step-top {
+    margin-bottom: 1.5rem;
+  }
+
+  .how-step-number {
+    font-size: 2.2rem;
+  }
+
+  .how-step-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+  }
+
+  .how-step-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .how-step-card p {
+    font-size: 0.92rem;
+  }
+
+  .how-actions {
+    gap: 1.25rem;
+    margin-top: 1.75rem;
+    padding: 1.25rem;
+    border-radius: 15px;
+  }
+
+  .how-buttons {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .how-button {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+/* ========================================
+   REDUCED MOTION
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .how-step-card,
+  .how-step-card::before,
+  .how-step-icon,
+  .how-button,
+  .how-button i {
+    transition: none;
+  }
+
+  .how-step-card:hover,
+  .how-button:hover {
+    transform: none;
   }
 }

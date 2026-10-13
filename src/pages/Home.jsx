@@ -8,7 +8,6 @@ import Services from "../components/Services.jsx";
 import Testimonials from "../components/Testimonials.jsx";
 import FAQ from "../components/FAQ.jsx";
 import Contact from "../components/Contact.jsx";
-import Newsletter from "../components/Newsletter.jsx";
 
 function Home() {
   const location = useLocation();
@@ -19,7 +18,6 @@ function Home() {
   const [testimonialsRef, testimonialsVisible] = useScrollReveal();
   const [faqRef, faqVisible] = useScrollReveal();
   const [contactRef, contactVisible] = useScrollReveal();
-  const [newsletterRef, newsletterVisible] = useScrollReveal();
 
   useEffect(() => {
     if (!location.hash) {
@@ -79,13 +77,6 @@ function Home() {
         className={`reveal ${contactVisible ? "visible" : ""}`}
       >
         <Contact />
-      </div>
-
-      <div
-        ref={newsletterRef}
-        className={`reveal ${newsletterVisible ? "visible" : ""}`}
-      >
-        <Newsletter />
       </div>
     </>
   );
